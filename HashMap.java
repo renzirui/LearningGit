@@ -306,6 +306,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         public final K getKey()        { return key; }
         public final V getValue()      { return value; }
         public final String toString() { return key + "=" + value; }
+            }
 
         public final int hashCode() {
             return Objects.hashCode(key) ^ Objects.hashCode(value);
@@ -2381,6 +2382,16 @@ public class HashMap<K,V> extends AbstractMap<K,V>
             return true;
         }
     }
+//yandada
+<<<<<<< HEAD
+<<<<<<< HEAD
+    //ofkjdkjgkjdfjkgj
+=======
+    //saddafdssd
+>>>>>>> HashBranch
+
+
+=======
     //张少康到此一游
 
 
@@ -2395,4 +2406,5 @@ public class HashMap<K,V> extends AbstractMap<K,V>
 
     //sssdsadsad
 
+>>>>>>> 3a2ed1a265e33faefa5546f585d279a14c9db66b
 }
