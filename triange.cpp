@@ -34,6 +34,8 @@ class Triange
     }
 };
 
+
+//你好,gyq
 int main( )
 {
     Point replacement(Point p,int x,int y);
