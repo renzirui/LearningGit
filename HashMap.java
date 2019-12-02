@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  *changed by yangjixue
  hhhhhhhhhhhhhhhhhh
@@ -11,11 +10,7 @@
 
 
 
-/*
-=======
-iiiiii/*
->>>>>>> 08c4b4d7caa2952462afd6631eec44de1ccd075b
- * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
+/* Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
