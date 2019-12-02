@@ -1,10 +1,8 @@
+
 zhanghy1104
 dev_guo20191202
-LIHAOBO
+
 zhangshaokang
-<<<<<<< HEAD
-sunxunfangs
-=======
 sunxufang
 zhangshaokang
 
@@ -12,4 +10,31 @@ delete
 aaaaaaaa
 
 update
->>>>>>> 73d95c8d681fd373543d078865e3755fc4aaa611
+
+a
+b
+c
+d
+e
+f
+g
+h
+i
+j
+k
+l
+m
+n
+o
+p
+q
+r
+s
+t
+u
+D
+v
+w
+x
+y
+
