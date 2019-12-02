@@ -2179,7 +2179,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         //张少康第二次游
 //sunxufang daociyiyou
         static <K,V> TreeNode<K,V> rotateLeft(TreeNode<K,V> root,
-                                              TreeNode<K,V> p) {
+                  //abcdefg                            TreeNode<K,V> p) {
             TreeNode<K,V> r, pp, rl;
             if (p != null && (r = p.right) != null) {
                 if ((rl = p.right = r.left) != null)
