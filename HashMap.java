@@ -1,5 +1,27 @@
-iiiiii/*
- * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
+/*
+ *changed by yangjixue
+ hhhhhhhhhhhhhhhhhh
+ aaaaaaaaaaaaaaaaaa
+ over
+ * /
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ * yjx2
+
+
+
+
+
+
+/* Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
@@ -2357,10 +2379,27 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     //ofkjdkjgkjdfjkgj
 =======
     //saddafdssd
 >>>>>>> HashBranch
 
 
+=======
+    //张少康到此一游
+
+
+    //sdasss
+
+    //sdasdasd
+    //大苏打撒旦撒旦
+
+    sdasdasdas
+
+    sdasdasdasdsa
+
+    //sssdsadsad
+
+>>>>>>> 3a2ed1a265e33faefa5546f585d279a14c9db66b
 }
