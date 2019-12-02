@@ -2277,23 +2277,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
                                                    TreeNode<K,V> x) {
             for (TreeNode<K,V> xp, xpl, xpr;;)  {
                 if (x == null || x == root)
-                    return root;
-                else if ((xp = x.parent) == null) {
-                    x.red = false;
-                    return x;
-                }
-                else if (x.red) {
-                    x.red = false;
-                    return root;
-                }
-                else if ((xpl = xp.left) == x) {
-                    if ((xpr = xp.right) != null && xpr.red) {
-                        xpr.red = false;
-                        xp.red = true;
-                        root = rotateLeft(root, xp);
-                        xpr = (xp = x.parent) == null ? null : xp.right;
-                    }
-                    if (xpr == null)
+                    //TEST
                         x = xp;
                     else {
                         TreeNode<K,V> sl = xpr.left, sr = xpr.right;
