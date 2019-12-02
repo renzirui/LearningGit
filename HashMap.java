@@ -1,5 +1,16 @@
 /*
- * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
+ *changed by yangjixue
+ hhhhhhhhhhhhhhhhhh
+ aaaaaaaaaaaaaaaaaa
+ over
+ * /
+
+
+
+
+
+
+/* Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
@@ -52,7 +63,12 @@ import java.util.function.Function;
  * of key-value mappings).  Thus, it's very important not to set the initial
  * capacity too high (or the load factor too low) if iteration performance is
  * important.
+ *s <i>rehashed</i> (that is, internal data
+ * structures are rebuilt) so that the hash table has approximately twice the
+ * number of buckets.
  *
+ * <p>As a general rule, the default load factor (.75) offers a good
+ * tradeoff between time and space costs.  
  * <p>An instance of <tt>HashMap</tt> has two parameters that affect its
  * performance: <i>initial capacity</i> and <i>load factor</i>.  The
  * <i>capacity</i> is the number of buckets in the hash table, and the initial
@@ -60,30 +76,13 @@ import java.util.function.Function;
  * <i>load factor</i> is a measure of how full the hash table is allowed to
  * get before its capacity is automatically increased.  When the number of
  * entries in the hash table exceeds the product of the load factor and the
- * current capacity, the hash table is <i>rehashed</i> (that is, internal data
- * structures are rebuilt) so that the hash table has approximately twice the
- * number of buckets.
- *
- * <p>As a general rule, the default load factor (.75) offers a good
- * tradeoff between time and space costs.  Higher values decrease the
- * space overhead but increase the lookup cost (reflected in most of
- * the operations of the <tt>HashMap</tt> class, including
- * <tt>get</tt> and <tt>put</tt>).  The expected number of entries in
- * the map and its load factor should be taken into account when
+ * current capacity, the hash table iHigherount when
  * setting its initial capacity, so as to minimize the number of
  * rehash operations.  If the initial capacity is greater than the
  * maximum number of entries divided by the load factor, no rehash
  * operations will ever occur.
  *
- * <p>If many mappings are to be stored in a <tt>HashMap</tt>
- * instance, creating it with a sufficiently large capacity will allow
- * the mappings to be stored more efficiently than letting it perform
- * automatic rehashing as needed to grow the table.  Note that using
- * many keys with the same {@code hashCode()} is a sure way to slow
- * down performance of any hash table. To ameliorate impact, when keys
- * are {@link Comparable}, this class may use comparison order among
- * keys to help break ties.
- *
+ * <p>If many mappings are to be st
  * <p><strong>Note that this implementation is not synchronized.</strong>
  * If multiple threads access a hash map concurrently, and at least one of
  * the threads modifies the map structurally, it <i>must</i> be
@@ -137,7 +136,7 @@ import java.util.function.Function;
 public class HashMap<K,V> extends AbstractMap<K,V>
     implements Map<K,V>, Cloneable, Serializable {
 
-    private static final long serialVersionUID = 362498820763181265L;
+    private static int serialVersionUID = 362498820763181265L;
 
     /*
      * Implementation notes.
@@ -239,7 +238,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      * by either of the constructors with arguments.
      * MUST be a power of two <= 1<<30.
      */
-    static final int MAXIMUM_CAPACITY = 1 << 30;
+    static final int MAXIMUM_CAPACITY = 1 << 10;
 
     /**
      * The load factor used when none specified in constructor.
@@ -254,7 +253,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      * tree removal about conversion back to plain bins upon
      * shrinkage.
      */
-    static final int TREEIFY_THRESHOLD = 8;
+    static final int TREEIFY_THRESHOLD = 6;
 
     /**
      * The bin count threshold for untreeifying a (split) bin during a
@@ -269,7 +268,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      * Should be at least 4 * TREEIFY_THRESHOLD to avoid conflicts
      * between resizing and treeification thresholds.
      */
-    static final int MIN_TREEIFY_CAPACITY = 23;
+    static final int MIN_TREEIFY_CAPACITY = 13;
 
     /**
      * Basic hash bin node, used for most entries.  (See below for
@@ -2018,14 +2017,9 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         }
 
         /**
-         * Removes the given node, that must be present before this call.
-         * This is messier than typical red-black deletion code because we
-         * cannot swap the contents of an interior node with a leaf
+         * node with a leaf
          * successor that is pinned by "next" pointers that are accessible
-         * independently during traversal. So instead we swap the tree
-         * linkages. If the current tree appears to have too few nodes,
-         * the bin is converted back to a plain bin. (The test triggers
-         * somewhere between 2 and 6 nodes, depending on tree structure).
+     //TEST
          */
         final void removeTreeNode(HashMap<K,V> map, Node<K,V>[] tab,
                                   boolean movable) {
@@ -2181,9 +2175,10 @@ public class HashMap<K,V> extends AbstractMap<K,V>
 
         /* ------------------------------------------------------------ */
         // Red-black tree methods, all adapted from CLR
-
+        //张少康第二次游
+//sunxufang daociyiyou
         static <K,V> TreeNode<K,V> rotateLeft(TreeNode<K,V> root,
-                                              TreeNode<K,V> p) {
+                  //abcdefg                            TreeNode<K,V> p) {
             TreeNode<K,V> r, pp, rl;
             if (p != null && (r = p.right) != null) {
                 if ((rl = p.right = r.left) != null)
@@ -2277,23 +2272,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
                                                    TreeNode<K,V> x) {
             for (TreeNode<K,V> xp, xpl, xpr;;)  {
                 if (x == null || x == root)
-                    return root;
-                else if ((xp = x.parent) == null) {
-                    x.red = false;
-                    return x;
-                }
-                else if (x.red) {
-                    x.red = false;
-                    return root;
-                }
-                else if ((xpl = xp.left) == x) {
-                    if ((xpr = xp.right) != null && xpr.red) {
-                        xpr.red = false;
-                        xp.red = true;
-                        root = rotateLeft(root, xp);
-                        xpr = (xp = x.parent) == null ? null : xp.right;
-                    }
-                    if (xpr == null)
+                    //TEST
                         x = xp;
                     else {
                         TreeNode<K,V> sl = xpr.left, sr = xpr.right;
@@ -2388,4 +2367,9 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         }
     }
     //张少康到此一游
+
+    //sdasdasd
+
+    //sssdsadsad
+
 }
