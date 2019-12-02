@@ -1,4 +1,4 @@
-/*
+iiiiii/*
  * Copyright (c) 1997, 2013, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
@@ -137,7 +137,7 @@ import java.util.function.Function;
 public class HashMap<K,V> extends AbstractMap<K,V>
     implements Map<K,V>, Cloneable, Serializable {
 
-    private static final long serialVersionUID = 362498820763181265L;
+    private static int serialVersionUID = 362498820763181265L;
 
     /*
      * Implementation notes.
@@ -269,7 +269,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      * Should be at least 4 * TREEIFY_THRESHOLD to avoid conflicts
      * between resizing and treeification thresholds.
      */
-    static final int MIN_TREEIFY_CAPACITY = 32;
+    static final int MIN_TREEIFY_CAPACITY = 23;
 
     /**
      * Basic hash bin node, used for most entries.  (See below for
@@ -2181,7 +2181,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
 
         /* ------------------------------------------------------------ */
         // Red-black tree methods, all adapted from CLR
-
+//sunxufang daociyiyou
         static <K,V> TreeNode<K,V> rotateLeft(TreeNode<K,V> root,
                                               TreeNode<K,V> p) {
             TreeNode<K,V> r, pp, rl;
