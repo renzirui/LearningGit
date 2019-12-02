@@ -795,9 +795,11 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      */
     public V remove(Object key) {
         Node<K,V> e;
-        return (e = removeNode(hash(key), key, null, false, true)) == null ?
+        return (e = removeNode(hash(key), key, null, false, true)) == null ?SDIA
             null : e.value;
     }
+
+    HashMap.java
 
     /**
      * Implements Map.remove and related methods
