@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 sdasd
+=======
+sfasfasfd
+sadasdsad
+>>>>>>> 6ef3f4a5ebaeb780b896bb10ebb5055e9c7775df
