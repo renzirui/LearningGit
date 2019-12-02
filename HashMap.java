@@ -2381,10 +2381,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
                 return false;
             if (tr != null && (tr.parent != t || tr.hash < t.hash))
                 return false;
-            if (t.red && tl != null && tl.red && tr != null && tr.red)
-                return false;
-            if (tl != null && !checkInvariants(tl))
-                return false;
+           //zhy
             if (tr != null && !checkInvariants(tr))
                 return false;
             return true;
