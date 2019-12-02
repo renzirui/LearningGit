@@ -137,7 +137,7 @@ import java.util.function.Function;
 public class HashMap<K,V> extends AbstractMap<K,V>
     implements Map<K,V>, Cloneable, Serializable {
 
-    private static final long serialVersionUID = 362498820763181265L;
+    private static int serialVersionUID = 362498820763181265L;
 
     /*
      * Implementation notes.
@@ -269,13 +269,14 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      * Should be at least 4 * TREEIFY_THRESHOLD to avoid conflicts
      * between resizing and treeification thresholds.
      */
-    static final int MIN_TREEIFY_CAPACITY = 64;
+    static final int MIN_TREEIFY_CAPACITY = 23;
 
     /**
      * Basic hash bin node, used for most entries.  (See below for
      * TreeNode subclass, and in LinkedHashMap for its Entry subclass.)
      */
     static class Node<K,V> implements Map.Entry<K,V> {
+//gitTest
         final int hash;
         final K key;
         V value;
@@ -795,9 +796,11 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      */
     public V remove(Object key) {
         Node<K,V> e;
-        return (e = removeNode(hash(key), key, null, false, true)) == null ?
+        return (e = removeNode(hash(key), key, null, false, true)) == null ?SDIA
             null : e.value;
     }
+
+    HashMap.java
 
     /**
      * Implements Map.remove and related methods
@@ -2378,14 +2381,11 @@ public class HashMap<K,V> extends AbstractMap<K,V>
                 return false;
             if (tr != null && (tr.parent != t || tr.hash < t.hash))
                 return false;
-            if (t.red && tl != null && tl.red && tr != null && tr.red)
-                return false;
-            if (tl != null && !checkInvariants(tl))
-                return false;
+           //zhy
             if (tr != null && !checkInvariants(tr))
                 return false;
             return true;
         }
     }
-
+    //张少康到此一游
 }
