@@ -34,6 +34,8 @@ class Triange
     }
 };
 
+
+//你好,gyq
 int main( )
 {
     Point replacement(Point p,int x,int y);
@@ -103,3 +105,7 @@ void ap(Point p1,Point p2,Point p3){
     } 
     
 }
+
+//你好,zhy
+
+
