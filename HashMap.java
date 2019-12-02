@@ -276,6 +276,7 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      * TreeNode subclass, and in LinkedHashMap for its Entry subclass.)
      */
     static class Node<K,V> implements Map.Entry<K,V> {
+//gitTest
         final int hash;
         final K key;
         V value;
