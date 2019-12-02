@@ -279,7 +279,11 @@ public class HashMap<K,V> extends AbstractMap<K,V>
      * Should be at least 4 * TREEIFY_THRESHOLD to avoid conflicts
      * between resizing and treeification thresholds.
      */
+<<<<<<< HEAD
+    static final int MIN_TREEIFY_CAPACITY = 99;
+=======
     static final int MIN_TREEIFY_CAPACITY = 13;
+>>>>>>> 3a2ed1a265e33faefa5546f585d279a14c9db66b
 
     /**
      * Basic hash bin node, used for most entries.  (See below for
